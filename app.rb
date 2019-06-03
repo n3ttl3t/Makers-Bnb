@@ -9,4 +9,5 @@ class Makers_BnB < Sinatra::Base
   post('/user') do
   end
 
+  run! if app_file == $0
 end
