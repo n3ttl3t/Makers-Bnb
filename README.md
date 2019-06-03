@@ -15,7 +15,6 @@
 
 **As user stories:**
 
-
 1. As a user(both),
 I would like to sign up to Makers BnB with name, username, email, and password.
 
