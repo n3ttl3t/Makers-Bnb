@@ -6,7 +6,6 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem 'sinatra'
 gem 'rake'
-gem 'datamapper'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'pg'

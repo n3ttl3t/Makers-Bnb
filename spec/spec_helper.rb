@@ -1,5 +1,4 @@
-
-
+require 'pg'
 require 'capybara/rspec'
 require './app.rb'
 require 'simplecov'
@@ -9,6 +8,13 @@ require 'simplecov-console'
 ENV['ENVIRONMENT'] = 'test'
 
 Capybara.app = Makers_BnB
+
+RSpec.configure do |config|
+  config.before(:each) do
+    setup_test_database
+  end
+end
+
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
