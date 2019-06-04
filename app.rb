@@ -7,7 +7,7 @@ require './lib/dmconfig'
 class Makers_BnB < Sinatra::Base
 
   get '/spaces' do
-    @spaces = Space.all
+    @spaces = Space.all :order => :id.desc
     erb :spaces
   end
 
@@ -16,9 +16,8 @@ class Makers_BnB < Sinatra::Base
   end
 
   post '/spaces/new' do
-    Space.create(params[:name], params[:description], params[:price])
-    redirect 'spaces'
+    Space.create(name: params[:name], description: params[:description], price: params[:price])
+    redirect '/spaces'
   end
-
 
 end
