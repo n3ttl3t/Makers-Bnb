@@ -1,4 +1,7 @@
-require 'spec_helper'
+require 'data_mapper'
+require 'dm-postgres-adapter'
+
+#require 'spec_helper'
 
 feature 'signing up' do
   scenario "it allows a new user to sign up" do
@@ -8,6 +11,6 @@ feature 'signing up' do
     fill_in('email', with: 'mo.salah@gmail.com')
     fill_in('password', with: 'password')
     click_button('Submit')
-    expect(page).to have_content("works")
+    expect(current_path).to eq('/spaces')
   end
 end

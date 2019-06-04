@@ -1,10 +1,16 @@
+require 'rubygems'
 require 'sinatra/base'
+require 'data_mapper'
+require 'dm-postgres-adapter'
 
+require './lib/setup_database'
 require './lib/space'
-require './lib/dmconfig'
+require './lib/user'
 
 class Makers_BnB < Sinatra::Base
   enable :sessions
+
+  setup_database
 
   get('/') do
     erb :index
@@ -14,7 +20,7 @@ class Makers_BnB < Sinatra::Base
     @user = User.create(name: params[:name], username: params[:username], email: params[:email], password: params[:password])
     redirect "/spaces"
   end
-  
+
   get '/spaces' do
     @spaces = Space.all :order => :id.desc
     erb :spaces

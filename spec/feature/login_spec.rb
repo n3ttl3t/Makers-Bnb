@@ -1,4 +1,3 @@
-require 'spec_helper'
 
 feature 'logging in' do
   scenario "it allows an existing user to log in" do
@@ -8,6 +7,6 @@ feature 'logging in' do
     fill_in('login-username', with: 'SaltyRox')
     fill_in('login-password', with: 'roxurulez1234')
     click_button('Login')
-    expect(page).to have_content("works")
+    expect(current_path).to eq('/spaces')
   end
 end
