@@ -2,6 +2,8 @@ require 'sinatra/base'
 require_relative 'dmconfig.rb'
 
 class Makers_BnB < Sinatra::Base
+  enable :sessions
+
   get('/') do
     erb :index
   end
