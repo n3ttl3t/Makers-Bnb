@@ -1,6 +1,17 @@
 <h1>Welcome to Makers BnB!</h1>
 
-<h2>Please sign up or if you're an existing user, log in.</h2>
+<h2>Please sign up or if you are an existing user, log in.</h2>
+
+<h4> Login </h4>
+<form action="/" method="post">
+  Enter your user name <input type="text" name="username" placeholder="username"></br>
+  Enter your password <input type="password" name="password" placeholder="password"></br>
+  <input type="submit" value="Login">
+</form>
+
+<form action="/signup" method="get">
+  <input type="submit" value="SignUp">
+</form>
 
 <h3> Sign Up: </h3>
 <form action="/" method="post">
@@ -11,9 +22,4 @@
  <input type="submit" value="Submit">
 </form>
 </br>
-<h4> Login </h4>
-<form action="/" method="post">
-Enter your user name</br><input type="text" name="login-username"></br></br>
-Enter your password</br><input type="text" name="login-password"></br></br>
-<input type="submit" value="Login">
-</form>
+
