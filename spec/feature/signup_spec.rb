@@ -8,6 +8,6 @@ feature 'signing up' do
     fill_in('email', with: 'mo.salah@gmail.com')
     fill_in('password', with: 'password')
     click_button('Submit')
-    expect(page).to have_content("Welcome to Makers BnB, Mo!")
+    expect(page).to have_content("works")
   end
 end
