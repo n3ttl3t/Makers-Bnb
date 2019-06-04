@@ -1,5 +1,7 @@
 require 'sinatra/base'
-require_relative 'dmconfig.rb'
+
+require './lib/space'
+require './lib/dmconfig'
 
 class Makers_BnB < Sinatra::Base
   enable :sessions
@@ -11,10 +13,20 @@ class Makers_BnB < Sinatra::Base
   post "/" do
     @user = User.create(name: params[:name], username: params[:username], email: params[:email], password: params[:password])
     redirect "/spaces"
-   end
-
+  end
+  
   get '/spaces' do
-    "works"
+    @spaces = Space.all :order => :id.desc
+    erb :spaces
+  end
+
+  get '/spaces/new' do
+    erb :spaces_new
+  end
+
+  post '/spaces/new' do
+    Space.create(name: params[:name], description: params[:description], price: params[:price])
+    redirect '/spaces'
   end
 
   run! if app_file == $0

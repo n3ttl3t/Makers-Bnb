@@ -1,2 +1,3 @@
-require_relative "./app"
+require './app'
+
 run Makers_BnB
