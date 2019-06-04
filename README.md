@@ -7,14 +7,13 @@
 
 1. Any signed-up user can list a new space.
 1. Users can list multiple spaces.
-1. Users should be able to name their space, provide a short description of the space, and a price per night.
+1. Users should be able to name their space, provide a short description of the space, and a price per night.  
 1. Users should be able to offer a range of dates where their space is available.
 1. Any signed-up user can request to hire any space for one night, and this should be approved by the user that owns that space.
 1. Nights for which a space has already been booked should not be available for users to book that space.
 1. Until a user has confirmed a booking request, that space can still be booked for that night.
 
 **As user stories:**
-
 
 1. As a user(both),
 I would like to sign up to Makers BnB with name, username, email, and password.
