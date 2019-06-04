@@ -1,3 +1,10 @@
+<% flash.keys.each do |type| %>
+  <div data-alert class="flash <%= type %> alert-box radius">
+    <%= flash[type] %>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
+
 <h1>Welcome to Makers BnB!</h1>
 
 <h2>Please sign up or if you are an existing user, log in.</h2>

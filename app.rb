@@ -19,12 +19,12 @@ class Makers_BnB < Sinatra::Base
   setup_database
 
   get('/') do
-    erb :index
+    erb :index 
   end
 
   post '/sessions' do
     user = User.all(:username => params[:username]) & User.all(:password => params[:password])
-    if user
+    if user.any?
       session[:user_id] = user[0].id
       redirect '/spaces'
     else
