@@ -19,7 +19,7 @@ Capybara.app = Makers_BnB
 
 RSpec.configure do |config|
  config.before(:each) do
-   setup_database
+   DataMapper.auto_migrate!
  end
 end
 
