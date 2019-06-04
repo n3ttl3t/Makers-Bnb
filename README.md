@@ -23,6 +23,8 @@ I would like to sign up to Makers BnB with name, username, email, and password.
 So only I can use my account,
 I would like to login to my Makers BnB account.
 
+![story_1_and_2](./images/makersbnb_signup.jpg)
+
 1. As a user(leaser),
 so I can list a new space,
 I would like to add a name, description, price, availability dates and photo.

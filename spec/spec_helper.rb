@@ -1,10 +1,11 @@
 
-
+require 'capybara'
 require 'capybara/rspec'
 require './app.rb'
 require 'simplecov'
 require 'simplecov-console'
 
+require './lib/space.rb'
 
 ENV['ENVIRONMENT'] = 'test'
 
