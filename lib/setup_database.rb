@@ -15,4 +15,4 @@ require './lib/space'
 
   DataMapper.finalize
   # DataMapper.auto_migrate!
-  # DataMapper.auto_upgrade!
+   DataMapper.auto_upgrade!
