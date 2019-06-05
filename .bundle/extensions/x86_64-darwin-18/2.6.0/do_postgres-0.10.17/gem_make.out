@@ -1,0 +1,32 @@
+current directory: /Users/student/makers/weekly_challenges/makers_bnb/Makers-Bnb/.bundle/gems/do_postgres-0.10.17/ext/do_postgres
+/Users/student/.rvm/rubies/ruby-2.6.0/bin/ruby -I /Users/student/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0 -r ./siteconf20190605-54847-nw2p7t.rb extconf.rb
+checking for -lpq... yes
+checking for libpq-fe.h... yes
+checking for libpq/libpq-fs.h... yes
+checking for postgres.h... yes
+checking for mb/pg_wchar.h... yes
+checking for catalog/pg_type.h... yes
+checking for localtime_r()... yes
+checking for gmtime_r()... yes
+checking for PQsetClientEncoding()... yes
+checking for pg_encoding_to_char()... yes
+checking for PQfreemem()... yes
+checking for rb_thread_fd_select()... yes
+creating Makefile
+
+current directory: /Users/student/makers/weekly_challenges/makers_bnb/Makers-Bnb/.bundle/gems/do_postgres-0.10.17/ext/do_postgres
+make "DESTDIR=" clean
+
+current directory: /Users/student/makers/weekly_challenges/makers_bnb/Makers-Bnb/.bundle/gems/do_postgres-0.10.17/ext/do_postgres
+make "DESTDIR="
+compiling do_common.c
+do_common.c:69:127: warning: function 'data_objects_raise_error' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void data_objects_raise_error(VALUE self, const struct errcodes *errors, int errnum, VALUE message, VALUE query, VALUE state) {
+                                                                                                                              ^
+1 warning generated.
+compiling do_postgres.c
+linking shared-object do_postgres/do_postgres.bundle
+
+current directory: /Users/student/makers/weekly_challenges/makers_bnb/Makers-Bnb/.bundle/gems/do_postgres-0.10.17/ext/do_postgres
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 do_postgres.bundle ./.gem.20190605-54847-l8v0p0/do_postgres

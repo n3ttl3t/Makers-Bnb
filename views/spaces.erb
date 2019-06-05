@@ -8,6 +8,6 @@
 <ul>
   <li> My beautiful Treehouse </li>
   <% @spaces.each do |space| %>
-  <li><%= "#{space.name}, #{space.description}, #{space.price} "%></li>
+  <li><%= "#{space.name}, #{space.description}, #{space.price}, available from: #{space.available_from}, to: #{space.available_to}"%></li>
   <% end %>
 </ul>

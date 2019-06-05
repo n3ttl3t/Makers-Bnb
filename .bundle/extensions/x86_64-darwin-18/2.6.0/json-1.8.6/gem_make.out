@@ -1,0 +1,13 @@
+current directory: /Users/student/makers/weekly_challenges/makers_bnb/Makers-Bnb/.bundle/gems/json-1.8.6/ext/json
+/Users/student/.rvm/rubies/ruby-2.6.0/bin/ruby -I /Users/student/.rvm/rubies/ruby-2.6.0/lib/ruby/2.6.0 -r ./siteconf20190605-54847-11wae72.rb extconf.rb
+creating Makefile
+
+current directory: /Users/student/makers/weekly_challenges/makers_bnb/Makers-Bnb/.bundle/gems/json-1.8.6/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/student/makers/weekly_challenges/makers_bnb/Makers-Bnb/.bundle/gems/json-1.8.6/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/student/makers/weekly_challenges/makers_bnb/Makers-Bnb/.bundle/gems/json-1.8.6/ext/json
+make "DESTDIR=" install

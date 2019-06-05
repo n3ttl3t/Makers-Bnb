@@ -9,5 +9,5 @@ class User
     property :username,       String, :required => true, :unique => true
     property :email,          String, :required => true, :unique => true
     property :password,       String, :required => true
-    
+
 end
