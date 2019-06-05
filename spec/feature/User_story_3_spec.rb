@@ -18,7 +18,9 @@ feature Makers_BnB do
   end
 
   scenario 'has a form for adding a new space' do
-    visit('/spaces/new')
+    create_account
+    login
+    click_button('add')
     expect(page).to have_field('name')
     expect(page).to have_field('description')
     expect(page).to have_field('price')
@@ -26,7 +28,9 @@ feature Makers_BnB do
   end
 
   scenario 'it shows added space' do
-    visit('/spaces/new')
+    create_account
+    login
+    click_button('add')
     fill_in 'name', with: 'Skinner House'
     fill_in 'description', with: 'Aurora Borealis'
     fill_in 'price', with: '1'
@@ -34,7 +38,7 @@ feature Makers_BnB do
     fill_in 'available_to', with: "10/6/2019"
     click_button 'submit'
     expect(current_path).to eq('/spaces')
-
+    save_and_open_page
     expect(page).to have_content('Skinner House')
     expect(page).to have_content('Aurora Borealis')
     expect(page).to have_content('1')
