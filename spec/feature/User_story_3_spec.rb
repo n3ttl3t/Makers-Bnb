@@ -38,7 +38,6 @@ feature Makers_BnB do
     fill_in 'available_to', with: "10/6/2019"
     click_button 'submit'
     expect(current_path).to eq('/spaces')
-    save_and_open_page
     expect(page).to have_content('Skinner House')
     expect(page).to have_content('Aurora Borealis')
     expect(page).to have_content('1')
