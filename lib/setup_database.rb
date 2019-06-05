@@ -3,7 +3,6 @@
 require './lib/user'
 require './lib/space'
 
-def setup_database
   if ENV['ENVIRONMENT'] == 'test'
     DataMapper.setup(
       :default, 'postgres://:@localhost/makers_bnb_test'
@@ -16,5 +15,3 @@ def setup_database
 
   DataMapper.finalize
   DataMapper.auto_upgrade!
-
-end

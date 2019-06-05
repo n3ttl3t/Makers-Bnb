@@ -9,17 +9,15 @@ require './lib/space'
 require './lib/user'
 
 class Makers_BnB < Sinatra::Base
- 
+
   configure :development do
     register Sinatra::Flash
   end
 
   enable :sessions
 
-  setup_database
-
   get('/') do
-    erb :index 
+    erb :index
   end
 
   post '/sessions' do
