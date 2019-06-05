@@ -8,6 +8,7 @@ feature 'logging in' do
     fill_in('password', with: 'roxurulez1234')
     click_button('Login')
     expect(current_path).to eq('/spaces')
+    expect(page).to have_content 'Welcome SaltyRox'
   end
 
   scenario "it throws a flash error if the username and password are incorrect" do
@@ -17,6 +18,6 @@ feature 'logging in' do
     fill_in('username', with: 'SaltyRox')
     fill_in('password', with: 'wrong_pass')
     click_button('Login')
-    expect(page).to have_content 'Please check your email or password'
+    expect(page).to have_content 'The username and password that you entered did not match our records. Please double-check and try again.'
   end
 end

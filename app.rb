@@ -39,10 +39,12 @@ class Makers_BnB < Sinatra::Base
 
   post "/signup" do
     @user = User.create(name: params[:name], username: params[:username], email: params[:email], password: params[:password])
+    session[:user_id] = @user.id
     redirect "/spaces"
   end
 
   get '/spaces' do
+    @current_user = User.get(session[:user_id])
     @spaces = Space.all :order => :id.desc
     erb :spaces
   end
