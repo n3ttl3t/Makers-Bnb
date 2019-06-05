@@ -8,8 +8,7 @@ gem 'sinatra'
 gem 'rake'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
-gem 'pg'
-gem 'shotgun'
+gem 'sinatra-flash', :require => 'sinatra/flash'
 
 group :test do
  gem 'rspec'

@@ -6,6 +6,8 @@ require 'dm-postgres-adapter'
 feature 'signing up' do
   scenario "it allows a new user to sign up" do
     visit('/')
+    click_button('SignUp')
+    expect(current_path).to eq('/signup')
     fill_in('name', with: 'Mo Salah')
     fill_in('username', with: 'mosalah10')
     fill_in('email', with: 'mo.salah@gmail.com')
