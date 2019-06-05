@@ -11,11 +11,11 @@
 
 <ul>
   <% @spaces.each do |space| %>
-  <%= space %>
-  <li><%= "#{space.name}, #{space.description}, #{space.price}, available from: #{space.available_from}, to: #{space.available_to}"%> 
-  <form action='/bookings/new' method ="post">
-  Book:<input type='submit' value='book'name='<%space%>'>
-</form>
-</li>
+  <li><%= "#{space.name}, #{space.description}, #{space.price}, available from: #{space.available_from}, to: #{space.available_to}"%>
+    <form action='/bookings/new' method ="post">
+      <input type="hidden" name="booking_id" value='<%= "#{space.id}" %>'>
+      <button name=<%="booking_name"%> type="submit" value='<%= "#{space.name}" %>'><%="book #{space.name}"%></button>
+    </form>
+  </li>
   <% end %>
 </ul>

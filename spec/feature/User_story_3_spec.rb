@@ -1,8 +1,9 @@
 require_relative 'feature_method'
 
-feature Makers_BnB do
 
-  
+feature 'Makers_BnB' do
+
+
   scenario 'has add a new space page' do
     create_account
     login

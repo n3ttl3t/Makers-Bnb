@@ -4,10 +4,11 @@ require 'data_mapper'
 require 'dm-postgres-adapter'
 require 'sinatra/flash'
 
-require './lib/setup_database'
 require './lib/space'
 require './lib/user'
 require './lib/booking'
+require './lib/setup_database'
+
 
 class Makers_BnB < Sinatra::Base
 
@@ -46,7 +47,6 @@ class Makers_BnB < Sinatra::Base
     @current_user = User.get(session[:user_id])
     session[:spaces] = Space.all :order => :id.desc
     @spaces = session[:spaces]
-    p @spaces
     erb :spaces
   end
 
@@ -55,16 +55,17 @@ class Makers_BnB < Sinatra::Base
   end
 
   post '/spaces/new' do
-    p User.get(session[:user_id]).id 
     @space = Space.create(name: params[:name], description: params[:description], price: params[:price], available_from: params[:available_from], available_to: params[:available_to], user_id: (User.get(session[:user_id])).id)
-    session[:space_id] = @space.id
-    session[:space_name] = @space.name
+    #session[:space_id] = @space.id
+    #session[:space_name] = @space.name
     redirect '/spaces'
   end
 
   post "/bookings/new" do
-    p "the param from the button is #{params[:book]}"
-    Booking.create(name: (Space.get(session[space_name])), confirmed: "false")
+    p "the name from the button is #{params[:booking_name]}"
+    p "the id from the button is #{params[:booking_id]}"
+    Booking.create(name: params[:booking_name], confirmed: "false", space_id: params[:booking_id], user_id: session[:user_id])
+    p "just created a booking"
     redirect "/bookings/requests"
   end
 
@@ -78,7 +79,7 @@ class Makers_BnB < Sinatra::Base
     erb :bookings_review
   end
 
-  get "/bookings/confirmation" do 
+  get "/bookings/confirmation" do
     "You have confirmed the request"
   end
 
