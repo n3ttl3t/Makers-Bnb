@@ -7,6 +7,7 @@ require 'sinatra/flash'
 require './lib/setup_database'
 require './lib/space'
 require './lib/user'
+require './lib/booking'
 
 class Makers_BnB < Sinatra::Base
 
@@ -43,7 +44,9 @@ class Makers_BnB < Sinatra::Base
 
   get '/spaces' do
     @current_user = User.get(session[:user_id])
-    @spaces = Space.all :order => :id.desc
+    session[:spaces] = Space.all :order => :id.desc
+    @spaces = session[:spaces]
+    p @spaces
     erb :spaces
   end
 
@@ -53,8 +56,30 @@ class Makers_BnB < Sinatra::Base
 
   post '/spaces/new' do
     p User.get(session[:user_id]).id 
-    Space.create(name: params[:name], description: params[:description], price: params[:price], available_from: params[:available_from], available_to: params[:available_to], user_id: (User.get(session[:user_id])).id)
+    @space = Space.create(name: params[:name], description: params[:description], price: params[:price], available_from: params[:available_from], available_to: params[:available_to], user_id: (User.get(session[:user_id])).id)
+    session[:space_id] = @space.id
+    session[:space_name] = @space.name
     redirect '/spaces'
+  end
+
+  post "/bookings/new" do
+    p "the param from the button is #{params[:book]}"
+    Booking.create(name: (Space.get(session[space_name])), confirmed: "false")
+    redirect "/bookings/requests"
+  end
+
+  get "/bookings/requests" do
+    erb :booking_requests
+  end
+
+  get "/bookings/review" do
+    @bookings = Booking.all
+    @spaces = session[:spaces]
+    erb :bookings_review
+  end
+
+  get "/bookings/confirmation" do 
+    "You have confirmed the request"
   end
 
   run! if app_file == $0

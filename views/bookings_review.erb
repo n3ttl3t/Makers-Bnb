@@ -1,0 +1,15 @@
+
+
+<ul>
+  <% @bookings.each do |booking| %>
+  <li><%= booking.id %> 
+  
+    <form action='/bookings/confirmation'>
+      <input type='submit' value='Confirm'>
+    </form>
+  </li>
+  <% end %>
+</ul>
+
+
+
