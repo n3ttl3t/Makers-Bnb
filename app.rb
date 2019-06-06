@@ -56,16 +56,12 @@ class Makers_BnB < Sinatra::Base
 
   post '/spaces/new' do
     @space = Space.create(name: params[:name], description: params[:description], price: params[:price], available_from: params[:available_from], available_to: params[:available_to], user_id: (User.get(session[:user_id])).id)
-    #session[:space_id] = @space.id
-    #session[:space_name] = @space.name
+
     redirect '/spaces'
   end
 
   post "/bookings/new" do
-    p "the name from the button is #{params[:booking_name]}"
-    p "the id from the button is #{params[:booking_id]}"
     Booking.create(name: params[:booking_name], confirmed: "false", space_id: params[:booking_id], user_id: session[:user_id])
-    p "just created a booking"
     redirect "/bookings/requests"
   end
 
