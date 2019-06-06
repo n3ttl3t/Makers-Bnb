@@ -1,25 +1,24 @@
 require 'rspec'
 require 'capybara'
 require 'capybara/rspec'
+require 'data_mapper'
+require 'dm-postgres-adapter'
+
+
+
+ENV['ENVIRONMENT'] = 'test'
 
 require './app.rb'
 require './lib/space.rb'
 require './lib/user.rb'
-
-
-require 'data_mapper'
-require 'dm-postgres-adapter'
-
+require './lib/booking.rb'
 require './lib/setup_database'
-
-
-ENV['ENVIRONMENT'] = 'test'
 
 Capybara.app = Makers_BnB
 
 RSpec.configure do |config|
  config.before(:each) do
-   DataMapper.auto_migrate!
+   DataMapper.auto_migrate! # uncomment this just to make a new table. Leave it out to persist data
  end
 end
 

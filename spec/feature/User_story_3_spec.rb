@@ -1,13 +1,8 @@
 require_relative 'feature_method'
 
-feature Makers_BnB do
 
-  scenario 'lists all available spaces' do
-    create_account
-    login
-    expect(current_path).to eq('/spaces')
-    expect(page).to have_content('My beautiful Treehouse')
-  end
+feature 'Makers_BnB' do
+
 
   scenario 'has add a new space page' do
     create_account

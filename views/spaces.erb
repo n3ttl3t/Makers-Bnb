@@ -4,10 +4,18 @@
 <form action='/spaces/new'>
   <input type='submit' value='add'>
 </form>
+<br>
+<form action='/bookings/review'>
+  <input type='submit' value='Review'>
+</form>
 
 <ul>
-  <li> My beautiful Treehouse </li>
   <% @spaces.each do |space| %>
-  <li><%= "#{space.name}, #{space.description}, #{space.price}, available from: #{space.available_from}, to: #{space.available_to}"%></li>
+  <li><%= "#{space.name}, #{space.description}, #{space.price}, available from: #{space.available_from}, to: #{space.available_to}"%>
+    <form action='/bookings/new' method ="post">
+      <input type="hidden" name="booking_id" value='<%= "#{space.id}" %>'>
+      <button name=<%="booking_name"%> type="submit" value='<%= "#{space.name}" %>'><%="book #{space.name}"%></button>
+    </form>
+  </li>
   <% end %>
 </ul>

@@ -1,0 +1,13 @@
+
+
+<ul>
+  <% @bookings.each do |booking| %>
+  <li><%= booking.name %>
+
+    <form action='/bookings/confirmation'>
+      <button name=<%="booking_name"%> type="submit" value='<%= "#{booking.name}" %>'><%="Confirm #{booking.name} booking"%></button>
+
+    </form>
+  </li>
+  <% end %>
+</ul>
