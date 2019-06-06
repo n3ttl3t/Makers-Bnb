@@ -1,3 +1,34 @@
+def setup_environment
+  User.create(name: 'Roxana Smith', username: 'SaltyRox', email: 'roxxmoxx@gmail.com', password: 'roxurulez1234')
+  User.create(name: 'Cosmin', username: 'Cosmin', email: 'cosmin@cosmin.com', password: '1234')
+
+  visit('/')
+  fill_in('username', with: 'SaltyRox')
+  fill_in('password', with: 'roxurulez1234')
+  click_button('Login')
+
+  click_button('add')
+  fill_in 'name', with: "Salty House"
+  fill_in 'description', with: 'Big'
+  fill_in 'price', with: '1'
+  fill_in 'available_from', with: "5/6/2019"
+  fill_in 'available_to', with: "10/6/2019"
+  click_button 'submit'
+
+  visit('/')
+  fill_in('username', with: 'Cosmin')
+  fill_in('password', with: '1234')
+  click_button('Login')
+
+  click_button('add')
+  fill_in 'name', with: 'Cosmin House'
+  fill_in 'description', with: 'Small'
+  fill_in 'price', with: '3'
+  fill_in 'available_from', with: "5/6/2219"
+  fill_in 'available_to', with: "10/6/2319"
+  click_button 'submit'
+end
+
 def create_account
   user = User.create(name: 'Roxana Smith', username: 'SaltyRox', email: 'roxxmoxx@gmail.com', password: 'roxurulez1234')
 end
