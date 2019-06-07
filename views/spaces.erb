@@ -24,7 +24,6 @@
 </form>
 <br>
 
-<div class="card">
 <ul style=margin-left:20px;>
 
   <%
@@ -38,6 +37,7 @@
 
   <% unless confirmed_ids.include?(space.id) %>
 
+  <div class="card">
   <li><%= "#{space.name}, #{space.description}, #{space.price}, available from: #{space.available_from}, to: #{space.available_to}"%>
     <form action='/bookings/new' method ="post">
       <input type="hidden" name="booking_id" value='<%= "#{space.id}" %>'>
@@ -48,9 +48,9 @@
 
   <% end %>
 
+  </div>
   <% end %>
 
 </ul>
-</div>
 </div>
 </div>

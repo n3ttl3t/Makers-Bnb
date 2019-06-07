@@ -157,10 +157,10 @@
 }
 
 .spaces_body {
+  position: relative;
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 70vh;
   /* background-image: linear-gradient(to right top, #051937, #002c60, #003f8c, #0053bb, #1267eb); */
   flex-direction: row;
   margin-left: 20%;
@@ -284,3 +284,100 @@
   .spaces .btntwo:last-of-type:hover {
     background: #fb8b19;
   }
+
+  .review_body {
+    position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  /* background-image: linear-gradient(to right top, #051937, #002c60, #003f8c, #0053bb, #1267eb); */
+  flex-direction: row;
+  margin-left: 10%;
+  }
+
+  .review_body .btntwo {
+    display: block;
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 10%;
+    float: center;
+    background: #e6e6e6;
+    padding: 15px;
+    border: 0;
+    font-size: .6rem;
+    color: #999999;
+    cursor: pointer;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .review_body .btntwo:last-of-type {
+    float: center;
+    background: #FCA44B;
+    color: #fff;
+  }
+  .review_body .btntwo:last-of-type:hover {
+    background: #fb8b19;
+  }
+
+  .review_body .book_name {
+    text-align: center;
+    margin-right: 55px;
+    margin-top: 20px;
+  }
+
+.review_card {
+  margin-top: 20px;
+    display: block;
+    width: 80%;
+    box-shadow: 0 12px 12px rgba(0,0,0,0.3);
+    padding: 2em;
+    background: #fff;
+    border-radius: 4px;
+    .card-header {
+      .card-title {
+        margin: 0;
+        font-size: 16px;
+      }
+    }
+}
+
+.review_body .btnthree {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* display: block;
+  width: 90%;
+  margin-top: 30px;
+  margin-left: -280%;
+  margin-right: 100%;
+  float: left; */
+  background: #e6e6e6;
+  padding: 15px;
+  border: 0;
+  font-size: .6rem;
+  color: #999999;
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.review_body .btnthree:last-of-type {
+  /* float: center; */
+  background: #FCA44B;
+  color: #fff;
+}
+.review_body .btnthree:last-of-type:hover {
+  background: #fb8b19;
+}
