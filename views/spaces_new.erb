@@ -1,3 +1,10 @@
+<% flash.keys.each do |type| %>
+  <div data-alert class="flash <%= type %> alert-box radius">
+    <%= flash[type] %>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
+
 <form action="/" method="get">
   <input type="submit" value="Logout">
 </form>
@@ -17,10 +24,9 @@
   <br>
   Price:<input class="main-form__input"  type="text" name="price">
   <br>
-  Available from:<input class="main-form__input" type="text" name="available_from">
+  Available from:<input class="main-form__input" type="text" name="available_from" placeholder="DD-MM-YYY">
   <br>
-  Available to:<input class="main-form__input" type="text" name="available_to">
-  <br>
+  Available to:<input class="main-form__input" type="text" name="available_to" placeholder="DD-MM-YYYY">
   <br>
   <button class="btn">submit</button>
   </div>
