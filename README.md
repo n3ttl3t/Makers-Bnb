@@ -24,19 +24,19 @@ Here are some gifs on how to use our app.
 
 1.  Either login or signup. (Make sure you enter your details correctly or you'll see an error message.)
 
-![Login](https://giphy.com/gifs/7zooadSPfLyYBsFJf4)
+![Login](./images/loggingin.gif)
 
 2. Add your own space by clicking on the 'ADD SPACE' button and complete the form.
 
-![Add space](https://giphy.com/gifs/67TgWLfKSVOS7rIhHU)
+![Add space](./images/adding_property.gif)
 
 3. You can book a space by clicking on the 'BOOK *space name*' button. Your 'spaces' view won't show any spaces if no other users have added any, so make sure someone has signed up and added a few!
 
-![Book a space](https://giphy.com/gifs/3dgmpw5B1HL7rEUSNu)
+![Book a space](./images/requesting_booking.gif)
 
 4. Finally, you can review the booking requests that have been made against your properties by clicking the 'REVIEW' button. Here you can confirm or deny the booking requests.
 
-![Review booking requests](https://giphy.com/gifs/9GIifxRVN3Y7WMcTfU)
+![Review booking requests](./images/confirming_booking.gif)
 
 ### RUNNING TESTS
 
