@@ -56,8 +56,12 @@ class Makers_BnB < Sinatra::Base
 
   post '/spaces/new' do
     @space = Space.create(name: params[:name], description: params[:description], price: params[:price], available_from: params[:available_from], available_to: params[:available_to], user_id: (User.get(session[:user_id])).id)
-
-    redirect '/spaces'
+     if !Space.all(:name => params[:name]).any?
+      flash[:notice] = 'You entered an invalid date format. Please try again.'
+      redirect "/spaces/new"
+     else
+      redirect '/spaces'
+     end
   end
 
   post "/bookings/new" do
