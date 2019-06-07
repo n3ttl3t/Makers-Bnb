@@ -6,7 +6,7 @@ class Booking
 
    property :id,            Serial
    property :name,          String
-   property :confirmed,     String#, :required => true, :default => false
+   property :confirmed,     Boolean, :required => true, :default => false
    belongs_to :space
    belongs_to :user
 
