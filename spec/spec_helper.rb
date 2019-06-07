@@ -18,7 +18,7 @@ Capybara.app = Makers_BnB
 
 RSpec.configure do |config|
  config.before(:each) do
-   DataMapper.auto_migrate! # uncomment this just to make a new table. Leave it out to persist data
+    DataMapper.auto_migrate! # uncomment this just to make a new table. Leave it out to persist data
  end
 end
 
