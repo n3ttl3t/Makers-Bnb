@@ -2,16 +2,26 @@
   <input type="submit" value="Logout">
 </form>
 
-<form action="/spaces/new" method="post">
-  Name:<input type="text" name="name">
+<!DOCTYPE html>
+<head>
+<meta charset = "UTF-8">
+<title>Makers BnB</title>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+
+<form class="main-form" action="/spaces/new" method="post">
+  <div class="main-form__body">
+  Name:<input class="main-form__input" type="text" name="name">
   <br>
-  Description:<input type="text" name="description">
+  Description:<input class="main-form__input"  type="text" name="description">
   <br>
-  Price:<input type="text" name="price">
+  Price:<input class="main-form__input"  type="text" name="price">
   <br>
-  Available from:<input type="text" name="available_from">
+  Available from:<input class="main-form__input" type="text" name="available_from">
   <br>
-  Available to:<input type="text" name="available_to">
+  Available to:<input class="main-form__input" type="text" name="available_to">
   <br>
-  <input type="submit" value="submit">
+  <br>
+  <button class="btn">submit</button>
+  </div>
 </form>
