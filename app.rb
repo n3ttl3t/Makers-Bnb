@@ -79,6 +79,13 @@ class Makers_BnB < Sinatra::Base
      erb :bookings_review
    end
 
+  post "/bookings/update" do
+    Booking.all(id: params[:booking_id]).update(:confirmed => 'true')
+    p Booking.all(id: params[:booking_id])
+
+    redirect "/bookings/confirmation"
+  end
+
   get "/bookings/confirmation" do
     erb :booking_confirmation
   end

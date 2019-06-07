@@ -7,7 +7,7 @@ def setup_environment
   fill_in('password', with: 'roxurulez1234')
   click_button('Login')
 
-  click_button('add')
+  click_button('Add Space')
   fill_in 'name', with: "Salty House"
   fill_in 'description', with: 'Big'
   fill_in 'price', with: '1'
@@ -20,7 +20,7 @@ def setup_environment
   fill_in('password', with: '1234')
   click_button('Login')
 
-  click_button('add')
+  click_button('Add Space')
   fill_in 'name', with: 'Cosmin House'
   fill_in 'description', with: 'Small'
   fill_in 'price', with: '3'
@@ -41,7 +41,7 @@ def login
 end
 
 def new_space
-  click_button('add')
+  click_button('Add Space')
   fill_in 'name', with: 'Skinner House'
   fill_in 'description', with: 'Aurora Borealis'
   fill_in 'price', with: '1'
@@ -51,7 +51,7 @@ def new_space
 end
 
 def new_space_alt
-  click_button('add')
+  click_button('Add Space')
   fill_in 'name', with: 'Your House'
   fill_in 'description', with: 'Super'
   fill_in 'price', with: 'free'

@@ -12,7 +12,7 @@ feature 'signing up' do
     fill_in('username', with: 'mosalah10')
     fill_in('email', with: 'mo.salah@gmail.com')
     fill_in('password', with: 'password')
-    click_button('Submit')
+    click_button('Register')
     expect(current_path).to eq('/spaces')
   end
 end

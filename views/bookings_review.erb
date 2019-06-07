@@ -1,7 +1,3 @@
-<form action="/" method="get">
-  <input type="submit" value="Logout">
-</form>
-
 <ul>
  <% @bookings.each do |booking|
 
@@ -10,12 +6,16 @@
  %>
  <li><%= booking.name %>
 
-   <form action='/bookings/confirmation'>
+   <form action='/bookings/update' method='post'>
      <button name=<%="booking_name"%> type="submit" value='<%= "#{booking.name}" %>'><%="Confirm #{booking.name} booking"%></button>
-
+     <input type="hidden" name="booking_id" value='<%= "#{booking.id}" %>'>
    </form>
  </li>
  <% end %>
  <% end %>
  <% end %>
 </ul>
+
+<form action='/spaces'>
+  <input type='submit' value='Return to spaces'>
+</form>

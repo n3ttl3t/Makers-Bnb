@@ -1,8 +1,23 @@
-<h3> Sign Up: </h3>
-<form action="/signup" method="post">
- Enter your name</br><input type="text" name="name"></br></br>
- Enter your user name</br><input type="text" name="username"></br></br>
- Enter your email address</br><input type="text" name="email"></br></br>
- Enter your password</br><input type="password" name="password"></br></br>
- <input type="submit" value="Submit">
+<!DOCTYPE html>
+ <head>
+ <meta charset = "UTF-8">
+ <title>Makers BnB</title>
+ <link rel="stylesheet" type="text/css" href="/style.css" />
+ </head>
+
+ <form class="main-form first" action="/signup" method="post">
+  <div class="main-form__title">
+    <h1>Sign-up</h1>
+  </div>
+  <div class="main-form__body">
+    <input class="main-form__input" type="text" name="name" placeholder="Name" />
+    <input class="main-form__input" type="text" name="username" placeholder="Username" />
+    <input class="main-form__input" type="text" name="email" placeholder="Email Address" />
+    <input class="main-form__input" type="password" name="password" placeholder="Password" />
+    <button class="btn">Register</button>
+  </div>
 </form>
+
+<div class="back_body">
+  <a class="back" href="/">Back to Login</a>
+</div>
