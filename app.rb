@@ -70,10 +70,10 @@ class Makers_BnB < Sinatra::Base
   end
 
   get "/bookings/review" do
-    @bookings = Booking.all
-    @spaces = session[:spaces]
-    erb :bookings_review
-  end
+     @bookings = Space.all(user_id: session[:user_id])
+     @unconfirmed_bookings = Booking.all(confirmed: false)
+     erb :bookings_review
+   end
 
   get "/bookings/confirmation" do
     "You have confirmed the request"

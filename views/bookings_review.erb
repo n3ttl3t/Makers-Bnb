@@ -1,13 +1,17 @@
-
-
 <ul>
-  <% @bookings.each do |booking| %>
-  <li><%= booking.name %>
+ <% @bookings.each do |booking|
 
-    <form action='/bookings/confirmation'>
-      <button name=<%="booking_name"%> type="submit" value='<%= "#{booking.name}" %>'><%="Confirm #{booking.name} booking"%></button>
+ @unconfirmed_bookings.each do |unconfirm_booking|
+   if booking.id == unconfirm_booking.space_id
+ %>
+ <li><%= booking.name %>
 
-    </form>
-  </li>
-  <% end %>
+   <form action='/bookings/confirmation'>
+     <button name=<%="booking_name"%> type="submit" value='<%= "#{booking.name}" %>'><%="Confirm #{booking.name} booking"%></button>
+
+   </form>
+ </li>
+ <% end %>
+ <% end %>
+ <% end %>
 </ul>
