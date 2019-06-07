@@ -41,7 +41,7 @@ feature 'Makers_BnB' do
   scenario 'it trys to add a space with incorrect date' do
     create_account
     login
-    click_button('add')
+    click_button('Add Space')
     fill_in 'name', with: 'Skinner House'
     fill_in 'description', with: 'Aurora Borealis'
     fill_in 'price', with: '1'
