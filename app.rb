@@ -46,6 +46,7 @@ class Makers_BnB < Sinatra::Base
   get '/spaces' do
     @current_user = User.get(session[:user_id])
     session[:spaces] = Space.all :order => :id.desc
+    @confirmed_bookings = Booking.all(confirmed: true)
     @spaces = session[:spaces]
     erb :spaces
   end

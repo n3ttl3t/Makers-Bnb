@@ -25,7 +25,18 @@
 <br>
 
 <ul style=margin-left:20px;>
+
+  <%
+    confirmed_ids = []
+    @confirmed_bookings.each do |booking|
+      confirmed_ids.push(booking.space_id)
+    end
+  %>
+
   <% @spaces.each do |space| %>
+
+  <% unless confirmed_ids.include?(space.id) %>
+
   <div class="card">
   <li><%= "#{space.name}, #{space.description}, #{space.price}, available from: #{space.available_from}, to: #{space.available_to}"%>
     <form action='/bookings/new' method ="post">
@@ -33,8 +44,13 @@
       <button class="btntwo" style=margin-left:40px; name=<%="booking_name"%> type="submit" value='<%= "#{space.name}" %>'><%="book #{space.name}"%></button>
     </form>
   </li>
+
+
+  <% end %>
+
   </div>
   <% end %>
+
 </ul>
 </div>
 </div>

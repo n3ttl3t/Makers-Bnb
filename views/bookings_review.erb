@@ -13,9 +13,10 @@
  %>
  <div class="book_name">
  <li><%= booking.name %>
+
  <div class="review_card">
    <form action='/bookings/update' method='post'>
-     <button class="btntwo" name=<%="booking_name"%> type="submit" value='<%= "#{booking.name}" %>'><%="Confirm #{booking.name} booking"%></button>
+     <button class="btntwo" name=<%="booking_name"%> type="submit" value='<%= "#{booking.name}" %>'><%="Confirm #{booking.name} booking by"%></button>
      <input type="hidden" name="booking_id" value='<%= "#{booking.id}" %>'>
    </form>
  </li>
