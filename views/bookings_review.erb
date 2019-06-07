@@ -1,21 +1,32 @@
+<!DOCTYPE html>
+<head>
+<meta charset = "UTF-8">
+<title>Makers BnB</title>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+<div class=review_body>
+
 <ul>
  <% @bookings.each do |booking|
-
  @unconfirmed_bookings.each do |unconfirm_booking|
    if booking.id == unconfirm_booking.space_id
  %>
+ <div class="book_name">
  <li><%= booking.name %>
-
+ <div class="review_card">
    <form action='/bookings/update' method='post'>
-     <button name=<%="booking_name"%> type="submit" value='<%= "#{booking.name}" %>'><%="Confirm #{booking.name} booking"%></button>
+     <button class="btntwo" name=<%="booking_name"%> type="submit" value='<%= "#{booking.name}" %>'><%="Confirm #{booking.name} booking"%></button>
      <input type="hidden" name="booking_id" value='<%= "#{booking.id}" %>'>
    </form>
  </li>
+    </div>
  <% end %>
  <% end %>
  <% end %>
 </ul>
 
+
 <form action='/spaces'>
-  <input type='submit' value='Return to spaces'>
+    <button class="btnthree">Return to spaces</button>
 </form>
+</div>
