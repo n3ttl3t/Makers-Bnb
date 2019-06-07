@@ -2,24 +2,39 @@
   <input type="submit" value="Logout">
 </form>
 
+<head>
+ <meta charset = "UTF-8">
+ <title>Makers BnB</title>
+ <link rel="stylesheet" type="text/css" href="/style.css" />
+ </head>
+
+<div class="space_title">
 <h1>Welcome <%= @current_user.username %></h1>
+</div>
 
+<div class="spaces_body">
 
+<div class="spaces">
 <form action='/spaces/new'>
-  <input type='submit' value='add'>
+  <button class="btn">Add Space</button>
 </form>
 <br>
 <form action='/bookings/review'>
-  <input type='submit' value='Review'>
+<button class="btn">Review</button>
 </form>
+<br>
 
-<ul>
+<div class="card">
+<ul style=margin-left:20px;>
   <% @spaces.each do |space| %>
   <li><%= "#{space.name}, #{space.description}, #{space.price}, available from: #{space.available_from}, to: #{space.available_to}"%>
     <form action='/bookings/new' method ="post">
       <input type="hidden" name="booking_id" value='<%= "#{space.id}" %>'>
-      <button name=<%="booking_name"%> type="submit" value='<%= "#{space.name}" %>'><%="book #{space.name}"%></button>
+      <button class="btntwo" style=margin-left:40px; name=<%="booking_name"%> type="submit" value='<%= "#{space.name}" %>'><%="book #{space.name}"%></button>
     </form>
   </li>
   <% end %>
 </ul>
+</div>
+</div>
+</div>

@@ -2,20 +2,18 @@ require_relative 'feature_method'
 
 
 feature 'Makers_BnB' do
-
-
   scenario 'has add a new space page' do
     create_account
     login
     expect(current_path).to eq('/spaces')
-    click_button('add')
+    click_button('Add Space')
     expect(current_path).to eq('/spaces/new')
   end
 
   scenario 'has a form for adding a new space' do
     create_account
     login
-    click_button('add')
+    click_button('Add Space')
     expect(page).to have_field('name')
     expect(page).to have_field('description')
     expect(page).to have_field('price')
@@ -25,7 +23,7 @@ feature 'Makers_BnB' do
   scenario 'it shows added space' do
     create_account
     login
-    click_button('add')
+    click_button('Add Space')
     fill_in 'name', with: 'Skinner House'
     fill_in 'description', with: 'Aurora Borealis'
     fill_in 'price', with: '1'
@@ -39,5 +37,4 @@ feature 'Makers_BnB' do
     expect(page).to have_content('5/6/2019')
     expect(page).to have_content('10/6/2019')
   end
-
 end

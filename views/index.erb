@@ -1,22 +1,35 @@
-<% flash.keys.each do |type| %>
-  <div data-alert class="flash <%= type %> alert-box radius">
-    <%= flash[type] %>
-    <a href="#" class="close">&times;</a>
-  </div>
-<% end %>
+<!DOCTYPE html>
+<head>
+<meta charset = "UTF-8">
+<title>Makers BnB</title>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
 
-<h1>Welcome to Makers BnB!</h1>
+<div class="main-form">
+ <div class="main-form__title">
+   <h1>Welcome to Makers BnB!</h1>
+ </div>
+ <center>
+ <div class="main-form__logo">
+   <img src="/images/makersbnb_logo.jpg" height=150px width=150px style="margin-top:-25px; margin-left:-68px;">
+ </div>
+ </center>
+ <div class="main-form__body">
+   <form action="/sessions" method="post">
+     <input class="main-form__input" type="text" name="username" placeholder="username" />
+     <input class="main-form__input" type="password" name="password" placeholder="password" />
+     <button class="btn">Login</button>
+   </form>
+   <form action="/signup" method="get">
+     <button class="btn">SignUp</button>
+   </form>
+ </div>
+</div>
 
-<h2>Please sign up or if you are an existing user, log in.</h2>
-
-<h4> Login </h4>
-<form action="/sessions" method="post">
-  Enter your user name <input type="text" name="username" placeholder="username"></br>
-  Enter your password <input type="password" name="password" placeholder="password"></br>
-  <input type="submit" value="Login">
-</form>
-
-<form action="/signup" method="get">
-  <input type="submit" value="SignUp">
-</form>
-
+<div class="error">
+  <% flash.keys.each do |type| %>
+    <div data-alert class="flash <%= type %> alert-box radius">
+      <%= flash[type] %>
+    </div>
+  <% end %>
+</div>
