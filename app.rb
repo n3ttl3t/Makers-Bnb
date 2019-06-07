@@ -76,7 +76,7 @@ class Makers_BnB < Sinatra::Base
    end
 
   get "/bookings/confirmation" do
-    "You have confirmed the request"
+    erb :booking_confirmation
   end
 
   run! if app_file == $0
