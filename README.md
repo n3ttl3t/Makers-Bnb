@@ -1,72 +1,57 @@
 # MAKERS BNB
-## TEAM ALPHA
 
----
+*Read this for our development process ==>* ***APPROACH.md***
 
-**Headline specifications**
+### INTRODUCTION
 
-1. Any signed-up user can list a new space.
-1. Users can list multiple spaces.
-1. Users should be able to name their space, provide a short description of the space, and a price per night.  
-1. Users should be able to offer a range of dates where their space is available.
-1. Any signed-up user can request to hire any space for one night, and this should be approved by the user that owns that space.
-1. Nights for which a space has already been booked should not be available for users to book that space.
-1. Until a user has confirmed a booking request, that space can still be booked for that night.
+The aim of this project was to create a small Air BnB clone that allows users to advertise and book spaces.
 
-**As user stories:**
+The project is provided by Makers Academy. The challenge takes place over the sixth week of the course and is the first project in which students must work with one another as part of a development team.
 
-1. As a user(both),
-I would like to sign up to Makers BnB with name, username, email, and password.
+### GETTING STARTED
 
-1. As a user(both),
-So only I can use my account,
-I would like to login to my Makers BnB account.
+GET THE PROJECT:
+* Fork/clone this project
+* In the terminal, run `bundle` to install all the dev dependencies
 
-![story_1_and_2](./images/makersbnb_signup.jpg)
+RUNNING THE PROJECT:
+* In the terminal, type `rackup` to start the server (by default served on localhost:9292)
+* Load up http://localhost:9292/ in your browser of choice
 
-1. As a user(leaser),
-so I can list a new space,
-I would like to add a name, description, price, availability dates and photo.
+### HOW TO USE THE APP
 
-![database](./images/makersbnb_database_model.jpg)
+Here are some gifs on how to use our app.
 
-1. As a user(renter),
-so I can find a space to stay,
-I would like view only spaces that are available for specific dates
+1.  Either login or signup. (Make sure you enter your details correctly or you'll see an error message.)
 
-1. As a user(renter),
-so I can rent a space,
-I would like a request a booking on a listed space.
+![Login](https://giphy.com/gifs/7zooadSPfLyYBsFJf4)
 
-1. As a user(leaser),
-so someone can rent my space,
-I would like to confirm or deny a request.
+2. Add your own space by clicking on the 'ADD SPACE' button and complete the form.
 
-1. As a user(both),
-so many people can request to stay
-my space will stay available until I've confirmed a booking
+![Add space](https://giphy.com/gifs/67TgWLfKSVOS7rIhHU)
 
-1. As a user(both),
-my space will become unavailable when I have confirmed a booking.
+3. You can book a space by clicking on the 'BOOK *space name*' button. Your 'spaces' view won't show any spaces if no other users have added any, so make sure someone has signed up and added a few!
 
-![flowchart](./images/makersbnb_flowchart.jpg)
+![Book a space](https://giphy.com/gifs/3dgmpw5B1HL7rEUSNu)
 
----
+4. Finally, you can review the booking requests that have been made against your properties by clicking the 'REVIEW' button. Here you can confirm or deny the booking requests.
 
-**Datamapper**
+![Review booking requests](https://giphy.com/gifs/9GIifxRVN3Y7WMcTfU)
 
-This caused us a bunch of headaches as we bumbled our way through including it, but became useful once we were familiar with it.
+### RUNNING TESTS
 
-DataMapper is an ORM: an Object-Relational Mapping. 
-Basically, it's a library that lets you work with your database from object-oriented code. Instead of writing any query code ourselves we include an adapter for mysql, postgresql or any other language we create our databases with.
+Tests can be run from the root directory with `rspec`
 
-In the gem file:
-```
-gem 'data_mapper'
-gem 'dm-postgres-adapter'
-```
-To include in spec helper for tests and app for dev:
-```
-require 'data_mapper'
-require 'dm-postgres-adapter'
-```
+### TECH/FRAMEWORK USED
+
+This project follows the RSpec testing framework using capybara. Find out more about Capybara [here](http://teamcapybara.github.io/capybara/).
+
+`"RSpec is a Behaviour-Driven Development tool for Ruby programmers. BDD is an approach to software development that combines Test-Driven Development, Domain Driven Design, and Acceptance Test-Driven Planning. RSpec helps you do the TDD part of that equation, focusing on the documentation and design aspects of TDD."` [Link](https://relishapp.com/rspec)
+
+`Sinatra` the ruby web framework will be used to develop this app. It will follow the MVC development pattern. Ruby will be used as the programming language and HTML in Sinatra views for the user interface.
+
+`PostgreSQL` has been used for the database. PostgreSQL is a free open-source relational database management system, designed to handle a range of workloads, from single machines to data warehouses or Web services with many concurrent users. [PostgresSQL](https://www.postgresql.org/)
+
+`DataMapper` has been used as our ORM to create and manage the tables within the database. [DataMapper](https://datamapper.org/)
+
+While developing the app the Ruby web server interface, Rack, was used. More info can be found at [Rack](https://rack.github.io/)
