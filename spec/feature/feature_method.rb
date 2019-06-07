@@ -33,10 +33,21 @@ def create_account
   user = User.create(name: 'Roxana Smith', username: 'SaltyRox', email: 'roxxmoxx@gmail.com', password: 'roxurulez1234')
 end
 
+def create_account_alt
+  user = User.create(name: 'Roxana Pirvu', username: 'Rox', email: 'rox@gmail.com', password: 'rox')
+end
+
 def login
   visit('/')
   fill_in('username', with: 'SaltyRox')
   fill_in('password', with: 'roxurulez1234')
+  click_button('Login')
+end
+
+def login_alt
+  visit('/')
+  fill_in('username', with: 'Rox')
+  fill_in('password', with: 'rox')
   click_button('Login')
 end
 

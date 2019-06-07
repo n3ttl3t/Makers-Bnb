@@ -66,8 +66,13 @@ class Makers_BnB < Sinatra::Base
   end
 
   post "/bookings/new" do
-    Booking.create(name: params[:booking_name], confirmed: "false", space_id: params[:booking_id], user_id: session[:user_id])
-    redirect "/bookings/requests"
+    if session[:user_id] == params[:space_user_id].to_i
+     flash[:notice] = "You can't book your own space!"    
+     redirect "/spaces"
+    else
+      Booking.create(name: params[:booking_name], confirmed: "false", space_id: params[:booking_id], user_id: session[:user_id])
+      redirect "/bookings/requests"
+    end
   end
 
   get "/bookings/requests" do

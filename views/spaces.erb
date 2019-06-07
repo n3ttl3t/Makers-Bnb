@@ -41,6 +41,8 @@
   <li><%= "#{space.name}, #{space.description}, #{space.price}, available from: #{space.available_from}, to: #{space.available_to}"%>
     <form action='/bookings/new' method ="post">
       <input type="hidden" name="booking_id" value='<%= "#{space.id}" %>'>
+      <input type="hidden" name="space_user_id" value='<%= "#{space.user_id}" %>'>
+
       <button class="btntwo" style=margin-left:40px; name=<%="booking_name"%> type="submit" value='<%= "#{space.name}" %>'><%="book #{space.name}"%></button>
     </form>
   </li>
@@ -53,4 +55,12 @@
 
 </ul>
 </div>
+</div>
+
+<div class="error">
+  <% flash.keys.each do |type| %>
+    <div data-alert class="flash <%= type %> alert-box radius">
+      <%= flash[type] %>
+    </div>
+  <% end %>
 </div>
