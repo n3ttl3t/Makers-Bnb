@@ -44,6 +44,8 @@ Tests can be run from the root directory with `rspec`
 
 ### TECH/FRAMEWORK USED
 
+The program is being hosted on Heroku.
+
 This project follows the RSpec testing framework using capybara. Find out more about Capybara [here](http://teamcapybara.github.io/capybara/).
 
 `"RSpec is a Behaviour-Driven Development tool for Ruby programmers. BDD is an approach to software development that combines Test-Driven Development, Domain Driven Design, and Acceptance Test-Driven Planning. RSpec helps you do the TDD part of that equation, focusing on the documentation and design aspects of TDD."` [Link](https://relishapp.com/rspec)
