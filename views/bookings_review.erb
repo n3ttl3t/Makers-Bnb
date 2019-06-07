@@ -5,9 +5,8 @@
    if booking.id == unconfirm_booking.space_id
  %>
  <li><%= booking.name %>
-
    <form action='/bookings/update' method='post'>
-     <button name=<%="booking_name"%> type="submit" value='<%= "#{booking.name}" %>'><%="Confirm #{booking.name} booking"%></button>
+     <button name=<%="booking_name"%> type="submit" value='<%= "#{booking.name}" %>'><%="Confirm #{booking.name} booking by"%></button>
      <input type="hidden" name="booking_id" value='<%= "#{booking.id}" %>'>
    </form>
  </li>

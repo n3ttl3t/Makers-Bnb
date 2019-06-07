@@ -16,5 +16,7 @@ feature "confirming booking" do
     expect(page).to have_content("You have confirmed the request")
     click_button 'Return to reviews'
     expect(page).not_to have_content("Confirm Skinner House booking")
+    click_button 'Return to spaces'
+    expect(page).not_to have_content("Skinner House")
   end
 end
